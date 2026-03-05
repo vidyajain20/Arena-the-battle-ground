@@ -1,66 +1,25 @@
-# Arena - The Battle Ground
+# OOP Concepts in Arena-the-battle-ground
 
-## Object-Oriented Programming Concepts Implemented
+## Enemy.py
+- **Class Inheritance**: The `Enemy` class inherits from a base class. This allows for code reusability and a hierarchical structure within the game.
+- **Encapsulation**: Attributes of the enemy are kept private, modifying them through public methods to maintain control over their values.
+- **Polymorphism**: Different types of enemies may override methods, providing specific functionality, while maintaining a common interface.
 
-1. **Classes and Objects**: The core building blocks of the project are defined as classes. Each class represents an entity with attributes and methods pertinent to that entity.
-   - **Example**: `Character` class represents game players and has attributes like health, attack power, etc.
+## Hero.py
+- **Abstraction**: The `Hero` class abstracts details of hero functionalities by providing a clean interface to interact with skills and abilities.
+- **Encapsulation**: Hero attributes such as health and armor are protected, ensuring they can only be modified through predefined methods.
+- **Inheritance**: Specific hero types may extend the base hero class, adding unique abilities or properties.
 
-2. **Inheritance**: This project utilizes inheritance to create a hierarchy of classes that share common characteristics while allowing for specialized behavior.
-   - **Example**: `Warrior` and `Mage` classes inherit from the `Character` class.
+## Zombie.py and Ogre.py
+- **Class Inheritance**: These classes inherit from `Enemy`, allowing them to share common methods while introducing unique attributes or behaviors.
+- **Polymorphism**: Each enemy type implements its attack methods that might differ in logic or outcome.
 
-3. **Polymorphism**: Methods can be redefined in derived classes, allowing objects to be treated as instances of their parent class.
-   - **Example**: The `attack()` method behaves differently for `Warrior` and `Mage` classes.
+## Weapon.py
+- **Encapsulation**: The weapon’s damage and type are encapsulated, and unique methods manage their state.
+- **Abstraction**: Abstracts the notion of different weapon types, providing clear cut usage references while hiding implementation details.
 
-4. **Encapsulation**: All attributes of a class are kept private or protected, and public methods are provided to manipulate them.
-   - **Example**: Health points are updated only through specific methods.
+## Main.py
+- **Composition**: The game uses composition to create complex objects like the hero or enemy instances using smaller building blocks (weapons, abilities).
+- **Polymorphism**: Various methods can handle different objects (e.g., weapon types) interchangeably as long as they share a base interface.
 
-## Project Structure
-
-```
-Arena-the-battle-ground/
-├── src/
-│   ├── characters/
-│   │   ├── Character.js
-│   │   ├── Warrior.js
-│   │   └── Mage.js
-│   ├── game/
-│   │   ├── Game.js
-│   │   └── GameManager.js
-│   └── utils/
-│       ├── Helper.js
-│       └── Constants.js
-├── tests/
-└── README.md
-```
-
-- **src/**: Contains the source code of the project.
-- **characters/**: Directory for character-related classes.
-- **game/**: Contains game logic and management.
-- **utils/**: Utility functions and constants used throughout the project.
-
-## How to Run the Project
-
-1. **Clone the Repository**:  
-   ```bash
-   git clone https://github.com/vidyajain20/Arena-the-battle-ground.git
-   cd Arena-the-battle-ground
-   ```
-2. **Install Dependencies**:  
-   Make sure you have Node.js installed. Then run:  
-   ```bash
-   npm install
-   ```
-3. **Start the Game**:
-   ```bash
-   npm start
-   ```
-
-## Features
-
-- **Multiplayer Support**: Fight against other players or AI characters.
-- **Character Customization**: Choose between different classes and customize your character's abilities.
-- **In-depth Combat System**: Each class has a unique combat style and special abilities.
-- **Dynamic Game Environment**: The game features interactive environments that change based on player actions.
-- **Leaderboard System**: Track player scores and compare them with others.
-
-For more details, please refer to the documentation or explore the source code directly.
+This documentation summarizes the key OOP principles applied in the related modules of the Arena-the-battle-ground project.
